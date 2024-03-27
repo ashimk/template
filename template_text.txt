@@ -49,6 +49,7 @@
     <div class="container">
         {{#collections}}
         <div class="collection">
+            <h2>{{name}}</h2>
             {{#documents.length}}
             {{#documents}}
             <div class="document">
