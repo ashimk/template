@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>All Collections</title>
@@ -47,23 +48,22 @@
 </head>
 <body>
     <div class="container">
-        {{#collections}}
+        {{#each collections}}
         <div class="collection">
             <h2>{{name}}</h2>
-            {{#documents.length}}
-            {{#documents}}
+            {{#if documents.length}}
+            {{#each documents}}
+            {{#each document}}
             <div class="document">
-                {{#document}}
                 <p><strong>{{key}}:</strong> {{value}}</p>
-                {{/document}}
             </div>
-            {{/documents}}
-            {{/documents.length}}
-            {{^documents.length}}
+            {{/each}}
+            {{/each}}
+            {{else}}
             <p class="no-documents">No documents found.</p>
-            {{/documents.length}}
+            {{/if}}
         </div>
-        {{/collections}}
+        {{/each}}
     </div>
 </body>
 </html>
